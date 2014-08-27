@@ -1,0 +1,74 @@
+/* General Page Styles - Baseline*/
+body {
+	background-color: #185A7F;
+	margin:0 auto;
+	color: #FFA630;
+	padding: 0 5%;
+	font-family: 'Roboto Slab', serif;
+}
+
+/* Header Styles - Baseline*/
+
+header {
+	min-height:200px;
+	width:100%;
+}
+
+#header-txt {
+	width:100%;
+	margin: 16px auto;
+	text-align: center;
+}
+
+#header-img {
+	width:100%;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 32px;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	margin:0 auto;
+	color:white;
+}
+
+header img {
+	width:130px;
+	height:130px;
+	border-radius: 50px;
+	margin: 6px auto;
+}
+
+/* Section Styles - Baseline*/
+
+section {
+	clear:both;
+	text-align: center;
+}
+
+#entry-box {
+	min-width:200px;
+	max-width:300px;
+	height:200px;
+	margin: 30px auto;
+	background-color: #2C94FF;
+	color:black;
+	border-radius: 5px;
+}
+
+#entry-box input {
+	width: 250px;
+	height:90px;
+	font-size: 2em;
+	text-align: center;
+	margin: 5px auto;
+}
+
+#help-me input {
+	color:black;
+}
+
+#instructions {
+
+}
