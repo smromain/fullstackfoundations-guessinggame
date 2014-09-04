@@ -59,7 +59,7 @@ $(document).ready(
 
 $(document).ready(
 	$('#help').on('click', function() {
-		$('#user-data').append("Okay, cheater! The number is " + numberSol + ".<br> Try and get it yourself next time!<br><br>");
+		$('#user-data').append("Okay, cheater! The number is " + numberSol + ".<br> Try and get it yourself next time! :p <br><br>");
 	})
 );
 
