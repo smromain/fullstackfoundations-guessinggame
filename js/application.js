@@ -70,6 +70,7 @@ $(document).ready(
 		numberSol = Math.floor((Math.random() * 100) + 1);
 		userGuesses = [0];
 		$('#user-data').empty();
+		$('#success').fadeOut();
 		$('#entry-box').fadeIn();
 	})
 );
