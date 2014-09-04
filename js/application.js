@@ -8,25 +8,29 @@ function answerEntry(){
 		if (!isNaN(userAnswer) && userAnswer > 0 && userAnswer < 101) {
 			if (userGuesses.indexOf(userAnswer) === -1) {
 				userGuesses.push(userAnswer);
-				if (numberSol > userAnswer) {
+				if (guessCount < 5 && numberSol > userAnswer) {
 					if ((numberSol - userAnswer) >= (numberSol - +userGuesses[guessCount-1])) {
-						$("#user-data").append(userAnswer + ": You're cold, go higher" + "<br>")
+						$("#user-data").append(userAnswer + "<br>You're cold, go higher... only " + (5 - guessCount) + " guess(es) left!" + "<br><br>")
 					}
 					else {
-						$("#user-data").append(userAnswer + ": You're warm, go higher" + "<br>")
+						$("#user-data").append(userAnswer + "<br><br>You're warm, go higher... only " + (5 - guessCount) + " guess(es) left!" + "<br><br>")
 					}
 				}
-				else if (numberSol < userAnswer) {
+				else if (guessCount < 5 && numberSol < userAnswer) {
 					if (Math.abs(userAnswer - numberSol) >= Math.abs(+userGuesses[guessCount-1] - numberSol)) {
-					$("#user-data").append(userAnswer + ": You're cold, go lower" + "<br>")
+					$("#user-data").append(userAnswer + "<br><br>You're cold, go lower... only " + (5 - guessCount) + " guess(es) left!" +  "<br><br>")
 					}
 					else {
-					$("#user-data").append(userAnswer + ": You're warm, go lower" + "<br>")
+					$("#user-data").append(userAnswer + "<br><br>You're warm, go lower... only " + (5 - guessCount) + " guess(es) left!" +  "<br><br>")
 					}
 				}
-				else {
+				else if (guessCount <= 5 && numberSol == userAnswer) {
 					$("#user-data").append("<h3>You got it! The answer is " + numberSol + "!</h3> <br>");
 					$('#success').fadeIn();
+				}
+				else {
+					$('#user-data').append("<h3>Sorry. <br>You didn't get it within 5 guesses. <br>Better luck next time!</h3> <br>The answer was " + numberSol + ".");
+					$('#entry-box').fadeOut();
 				}
 			}
 			else {alert("You guessed that already!")}
@@ -51,9 +55,11 @@ $(document).ready(
 		})
 );
 
+//user asks for hint, let's chide them but let them keep playing, regardless
+
 $(document).ready(
 	$('#help').on('click', function() {
-		$('#user-data').append("Okay, cheater! The number is " + numberSol);
+		$('#user-data').append("Okay, cheater! The number is " + numberSol + ".<br> Try and get it yourself next time!<br><br>");
 	})
 );
 
@@ -64,6 +70,7 @@ $(document).ready(
 		numberSol = Math.floor((Math.random() * 100) + 1);
 		userGuesses = [0];
 		$('#user-data').empty();
+		$('#entry-box').fadeIn();
 	})
 );
 
