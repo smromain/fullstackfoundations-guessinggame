@@ -24,19 +24,28 @@
     </header>
   <section>
     <div id="instructions">
-      <p>Input your guess below, between 1 and 100.</p></p>Easy as that.</p> <p>Let the prompts guide you.</p>
+      <p>Input your guess below, between 1 and 100.</p>
     </div>
     <div id="entry-box">
-      <input type="number" min="1" max="100" text=""><br>
-      <input type="submit" id="submit" value="Am I Right?"> 
+        <input type="text" id="entry"text=""><br>
+        <input type="submit" id="submit-answer" value="Am I Right?">
+    </div>
+    <div id="user-inputs">
+      <p>Answers you've submitted:<br></p>
     </div>
     <div id="help-me">
       <h3>Do you need a hint?</h3>
       <input type="submit" id="help" value="Hint me up, buttercup!"> 
     </div>
+    <div id="reset-game">
+      <h3>Want to try again?</h3>
+      <input type="submit" id="reset" value="Give it another go!"> 
+      <p></p>
+    </div>
   </section>
   </body>
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/application.js"></script>
 </html>
 
