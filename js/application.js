@@ -8,25 +8,24 @@ function answerEntry(){
 		if (!isNaN(userAnswer) && userAnswer > 0 && userAnswer < 101) {
 			if (userGuesses.indexOf(userAnswer) === -1) {
 				userGuesses.push(userAnswer);
-				$('#userinputs').append("<li>" + userAnswer + "</li>");
-				// if (numberSol > userAnswer) {
-				// 	if ((numberSol - userAnswer) >= (numberSol - +userGuesses[guessCount])) {
-				// 		console.log(userAnswer + " Go Higher, you're cold" + " " + numberSol)
-				// 	}
-				// 	else {
-				// 		console.log(userAnswer + " Go Higher, you're warm" + " " + numberSol)
-				// 	}
-				// }
-				// else if (numberSol < userAnswer) {
-				// 	if ((userAnswer - numberSol) >= +userGuesses[guessCount] - numberSol) {
-				// 	console.log(userAnswer + " Go lower, you're cold" + " " + numberSol)
-				// 	}
-				// 	else {
-				// 	console.log(userAnswer + " Go lower, you're warm" + " " + numberSol)
-				// 	}
-				// }
+				if (numberSol > userAnswer) {
+					if ((numberSol - userAnswer) >= (numberSol - +userGuesses[guessCount-1])) {
+						$("#user-data").append(userAnswer + ": You're cold, go higher" + "<br>")
+					}
+					else {
+						$("#user-data").append(userAnswer + ": You're warm, go higher" + "<br>")
+					}
+				}
+				else if (numberSol < userAnswer) {
+					if (Math.abs(userAnswer - numberSol) >= Math.abs(+userGuesses[guessCount-1] - numberSol)) {
+					$("#user-data").append(userAnswer + ": You're cold, go lower" + "<br>")
+					}
+					else {
+					$("#user-data").append(userAnswer + ": You're warm, go lower" + "<br>")
+					}
+				}
 				else {
-					console.log("You got it! " + numberSol);
+					$("#user-data").append("You got it! The answer is " + numberSol + "!");
 				}
 			}
 			else {alert("You guessed that already!")}
@@ -53,7 +52,7 @@ $(document).ready(
 
 $(document).ready(
 	$('#help').on('click', function() {
-		$('#userinputs').append("Okay, cheater! The number is " + numberSol);
+		$('#user-data').append("Okay, cheater! The number is " + numberSol);
 	})
 );
 
@@ -62,6 +61,8 @@ $(document).ready(
 $(document).ready(
 	$('#reset').on('click', function() {
 		numberSol = Math.floor((Math.random() * 100) + 1);
+		userGuesses = [0];
+		$('#user-data').empty();
 	})
 );
 
