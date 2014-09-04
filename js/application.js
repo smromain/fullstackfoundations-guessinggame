@@ -25,7 +25,8 @@ function answerEntry(){
 					}
 				}
 				else {
-					$("#user-data").append("You got it! The answer is " + numberSol + "!");
+					$("#user-data").append("<h3>You got it! The answer is " + numberSol + "!</h3> <br>");
+					$('#success').fadeIn();
 				}
 			}
 			else {alert("You guessed that already!")}

@@ -40,6 +40,17 @@ header img {
 	margin: 6px auto;
 }
 
+#success {
+	display:none;
+}
+
+#success img {
+	max-width:380px;
+	max-height:300px;
+	border-radius: 50px;
+	margin: 6px auto;
+}
+
 /* Section Styles - Baseline*/
 
 section {
@@ -49,7 +60,7 @@ section {
 
 #entry-box {
 	min-width:200px;
-	max-width:300px;
+	max-width:400px;
 	height:200px;
 	margin: 30px auto;
 	background-color: #2C94FF;
@@ -67,7 +78,7 @@ section {
 
 #user-inputs {
 	min-width:200px;
-	max-width:300px;
+	max-width:400px;
 	min-height:40px;
 	margin: 30px auto;
 	background-color: grey;
